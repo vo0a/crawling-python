@@ -1,10 +1,14 @@
 import pymysql
+import os
+from dotenv import load_dotenv
+load_dotenv()
+
 # 클래스 선언
 class DBConnect:
     # 생성자 선언
     def __init__(self):
         # MySQL DB와 연결을 위한 connect 인스턴스를 선언
-        self.conn = pymysql.connect(host='localhost', port=3306, user='root', password='mysql1234', db='test', charset='utf8' )
+        self.conn = pymysql.connect(host='localhost', port=3306, user=os.getenv('MYSQL_ID'), password=os.getenv('MYSQL_PASSWORD'), db='test', charset='utf8' )
         # 파이썬에서 쿼리를 사용하고 저장하기 위한 cursor 인스턴스 선언
         self.curs = self.conn.cursor(pymysql.cursors.DictCursor)
 

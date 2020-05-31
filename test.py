@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
+import os
 import time
 from selenium import webdriver
-
 # Chrome WebDriver를 이용해 Chrome을 실행합니다.
 driver = webdriver.Chrome('C:/Users/ekfha/AppData/Local/Programs/Python/chromedriver.exe');
 

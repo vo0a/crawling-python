@@ -1,4 +1,5 @@
 import time
+import os
 # 해시태그를 분석하기 위한 Okt 모듈 (구Twitter)
 from konlpy.tag import Okt
 # 크롬 브라우저 조작을 위한 모듈
@@ -7,11 +8,13 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 # mysql과 연결하기 위한 모듈
 from db_connect import DBConnect
+from dotenv import load_dotenv
+load_dotenv()
 
 # 크롤링할 url 주소
 url = "https://www.instagram.com/explore/tags/python/"
 # 다운로드 받은 driver 주소
-DRIVER_DIR = 'C:/Users/ekfha/AppData/Local/Programs/Python/chromedriver.exe'
+DRIVER_DIR = os.getenv('DRIVER_DIR')
 # 크롬 드라이버를 이용해 임의로 크롬 브라우저를 실행시켜 조작한다.
 driver = webdriver.Chrome(DRIVER_DIR)
 # 암묵적으로 웹 자원을 (최대) 5초 기다리기
