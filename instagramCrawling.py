@@ -1,5 +1,4 @@
-import time
-import os
+import time os
 # 해시태그를 분석하기 위한 Okt 모듈 (구Twitter)
 from konlpy.tag import Okt
 # 크롬 브라우저 조작을 위한 모듈
